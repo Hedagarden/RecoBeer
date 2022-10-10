@@ -22,4 +22,5 @@ replace 'branchName with your own name'
    `git commit -m 'commit message'`
 5. Push the branch to the github repository
    `git push -u origin branchName`
-6. Go to the repository on github and create a pull request
+6. Go to the repository on github and create a pull request. In the github [repository page](https://github.com/richardsanborn/recobeer), press `Compare & pull request` and then press `Create pull request`
+7. When the pull request is done, delete your remote branch and you're done.
