@@ -67,13 +67,6 @@ function App() {
     }
   };
 
-  function removeParticipant(id: number) {
-    const objWithIdIndex = participants.findIndex((obj) => obj.id === id);
-    var changedParticipants = participants.splice(objWithIdIndex, 1);
-
-    setParticipants(changedParticipants);
-  }
-
   return (
     <div className="App">
       <header className="App-header">
