@@ -10,7 +10,6 @@ import {
   createTheme,
   responsiveFontSizes,
 } from '@mui/material/styles';
-import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import CssBaseline from '@mui/material/CssBaseline';
 import Grid from '@mui/material/Grid';
