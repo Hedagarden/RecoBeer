@@ -9,6 +9,10 @@ This repository contains the recobeer excel file.
 Run this command locally:
 `git clone https://github.com/richardsanborn/recobeer.git`
 
+### Starting the project locally
+
+1. Run the following commands `npm install && npm start`
+
 ### Submitting a change
 
 replace 'branchName with your own name'
