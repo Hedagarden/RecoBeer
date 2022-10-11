@@ -37,9 +37,16 @@ function App() {
   const [newParticipantName, setNewParticipantName] = useState<string>('');
   const [totalScore, setTotalScore] = useState(0);
   const [averageScore, setAverageScore] = useState(0);
+  const [nameFieldValidationIsValid, setNameFieldValidationIsValid] =
+    useState(true);
 
   function addParticipant(name: string) {
-    if (name === '') return;
+    if (name === '') {
+      setNameFieldValidationIsValid(false);
+      return;
+    }
+
+    setNameFieldValidationIsValid(true);
     setParticipants([
       ...participants,
       { id: getAndIncrementParticipantCounter(), name: name, points: '1' },
@@ -166,7 +173,7 @@ function App() {
               <TextField
                 size="small"
                 label="name"
-                error={newParticipantName === ''}
+                error={!nameFieldValidationIsValid}
                 type="text"
                 onChange={(evt) => setNewParticipantName(evt.target.value)}
                 value={newParticipantName}
