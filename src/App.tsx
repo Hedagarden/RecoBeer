@@ -2,9 +2,10 @@ import React, { useState, useEffect } from 'react';
 import logo from './recobeerlogo_v3.png';
 import './App.css';
 
-import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 import DeleteIcon from '@mui/icons-material/Delete';
+import PlusOneIcon from '@mui/icons-material/PlusOne';
+import RestartAltIcon from '@mui/icons-material/RestartAlt';
 import {
   ThemeProvider,
   createTheme,
@@ -15,6 +16,7 @@ import CssBaseline from '@mui/material/CssBaseline';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
+import IconButton from '@mui/material/IconButton';
 
 type Participant = {
   id: number;
@@ -37,6 +39,7 @@ function App() {
   const [averageScore, setAverageScore] = useState(0);
 
   function addParticipant(name: string) {
+    if (name === '') return;
     setParticipants([
       ...participants,
       { id: getAndIncrementParticipantCounter(), name: name, points: '1' },
@@ -122,15 +125,19 @@ function App() {
           <Typography variant="h2" gutterBottom>
             recobeer
           </Typography>
-          <Grid container spacing={2}>
-            <Grid item xs={12} md={12}>
+          <Grid container maxWidth="sm" justifyContent="center">
+            <Grid item xs={10}>
               {participants &&
                 participants.map((e) => (
-                  <Grid key={e.id} container spacing={2}>
-                    <Grid item xs={12} md={4}>
-                      {e.name}
+                  <Grid
+                    key={e.id}
+                    container
+                    spacing={1}
+                    style={{ marginBottom: '15px' }}>
+                    <Grid item xs={8}>
+                      <TextField disabled defaultValue={e.name} size="small" />
                     </Grid>
-                    <Grid item xs={12} md={4}>
+                    <Grid item xs={3}>
                       <TextField
                         size="small"
                         type="text"
@@ -141,14 +148,12 @@ function App() {
                       />
                     </Grid>
 
-                    <Grid item xs={12} md={4}>
-                      <Button
-                        startIcon={<DeleteIcon />}
-                        variant="contained"
+                    <Grid item xs={1}>
+                      <IconButton
                         id="removeParticipant"
                         onClick={() => handleRemoveParticipant(e.id)}>
-                        remove
-                      </Button>
+                        <DeleteIcon />
+                      </IconButton>
                     </Grid>
                   </Grid>
                 ))}
@@ -156,32 +161,33 @@ function App() {
               {participants.length === 0 && <p>no participants yet..</p>}
             </Grid>
           </Grid>
-          <Grid container spacing={2}>
-            <Grid item xs={12} md={4}>
+          <Grid justifyContent="center" container maxWidth="sm">
+            <Grid item xs={8}>
               <TextField
                 size="small"
-                placeholder="name"
+                label="name"
+                error={newParticipantName === ''}
                 type="text"
                 onChange={(evt) => setNewParticipantName(evt.target.value)}
                 value={newParticipantName}
                 onKeyDown={handleEnter}
               />
             </Grid>
-            <Grid item xs={12} md={4}>
-              <Button
-                variant="contained"
+            <Grid item xs={1}>
+              <IconButton
+                color="success"
                 id="addParticipant"
                 onClick={() => addParticipant(newParticipantName)}>
-                add participant
-              </Button>
+                <PlusOneIcon />
+              </IconButton>
             </Grid>
-            <Grid item xs={12} md={4}>
-              <Button
-                variant="contained"
+            <Grid item xs={1}>
+              <IconButton
+                color="error"
                 id="resetParticipants"
                 onClick={() => handleResetParticipants()}>
-                reset
-              </Button>
+                {<RestartAltIcon />}
+              </IconButton>
             </Grid>
           </Grid>
           <p>total/average: </p>
