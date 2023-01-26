@@ -43,8 +43,8 @@ function Scoreboard() {
     var total = 0;
     var avg = 0;
 
-    participants.forEach((participant) => {
-      total += parseInt(participant.points);
+    participants.forEach((participant : Participant) => {
+      total += parseFloat(participant.points);
     });
 
     avg = total / participants.length;
@@ -72,7 +72,7 @@ function Scoreboard() {
       points = '1';
     }
 
-    setParticipants((participants) =>
+    setParticipants((participants : Participant[]) =>
       participants.map((p) => {
         return p.id === id ? { ...p, points: points } : p;
       })
