@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/recobeer/static/css/main.3e291ebf.css",
-    "main.js": "/recobeer/static/js/main.6e884177.js",
+    "main.js": "/recobeer/static/js/main.d56c2781.js",
     "static/media/recobeerlogo_v3.png": "/recobeer/static/media/recobeerlogo_v3.7d47c877395326550779.png",
     "index.html": "/recobeer/index.html",
     "main.3e291ebf.css.map": "/recobeer/static/css/main.3e291ebf.css.map",
-    "main.6e884177.js.map": "/recobeer/static/js/main.6e884177.js.map"
+    "main.d56c2781.js.map": "/recobeer/static/js/main.d56c2781.js.map"
   },
   "entrypoints": [
     "static/css/main.3e291ebf.css",
-    "static/js/main.6e884177.js"
+    "static/js/main.d56c2781.js"
   ]
 }
