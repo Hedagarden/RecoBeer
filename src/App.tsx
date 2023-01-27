@@ -45,7 +45,7 @@ function App() {
           </Typography>
 
           <Link
-            href="https://github.com/richardsanborn/recobeer/raw/main/recoBeer.xlsx"
+            href="https://github.com/hedagarden/recobeer/raw/main/recoBeer.xlsx"
             download
             style={{ marginBottom: 16 }}>
             recobeer.xlsx

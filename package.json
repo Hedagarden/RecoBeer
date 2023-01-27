@@ -1,7 +1,7 @@
 {
   "name": "recobeer",
   "version": "0.1.0",
-  "homepage": "https://richardsanborn.github.io/recobeer",
+  "homepage": "https://hedagarden.github.io/recobeer",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.10.4",
