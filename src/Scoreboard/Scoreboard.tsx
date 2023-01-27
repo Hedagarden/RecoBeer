@@ -162,7 +162,7 @@ function Scoreboard() {
           </IconButton>
         </Grid>
       </Grid>
-      <p>total/average: </p>
+      <p style={{marginTop: '30px'}}>total/average: </p>
       {totalScore} / {averageScore.toFixed(2)}
     </>
   );
